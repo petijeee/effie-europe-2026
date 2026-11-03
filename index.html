@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Effie Europe 2026: finalisti pod lupou</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* papier v mriežke, zvýrazňovač na to podstatné, modré pero na slabé miesta */
+  --paper: #f7f8f4;
+  --grid: #e1e6ea;
+  --card: #ffffff;
+  --ink: #1d2328;
+  --muted: #5b6670;
+  --pen: #1f4fa3;
+  --marker: #fff06a;
+  --display: "Fraunces", Georgia, serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); font: 400 15px/1.55 var(--body);
+  background-color: var(--paper);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 32px 20px 64px; display: grid; gap: 24px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.12rem; }
+p { margin: 0; }
+a { color: var(--pen); }
+mark { background: linear-gradient(transparent 38%, var(--marker) 38%, var(--marker) 90%, transparent 90%); color: inherit; padding: 0 2px; }
+.meta { font-family: var(--mono); font-size: .75rem; color: var(--muted); letter-spacing: .03em; text-transform: uppercase; }
+.lead { max-width: 75ch; font-size: 1.05rem; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.tile { background: var(--card); border: 1px solid var(--grid); padding: 12px 14px; display: grid; gap: 2px; }
+.tile b { font-family: var(--display); font-size: 1.7rem; font-variant-numeric: tabular-nums; }
+nav { display: flex; gap: 6px; flex-wrap: wrap; border-bottom: 2px solid var(--ink); }
+nav a { font-family: var(--mono); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; text-decoration: none; color: var(--ink); padding: 8px 14px; border: 1px solid transparent; border-bottom: none; }
+nav a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+nav a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, .row:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+section[hidden] { display: none; }
+section { display: grid; gap: 18px; }
+.cards { display: grid; gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--grid); border-top: 3px solid var(--ink); padding: 16px 18px; display: grid; gap: 10px; }
+.card .head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.tag { font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; padding: 2px 8px; border: 1px solid var(--ink); white-space: nowrap; }
+.tag.hi { background: var(--marker); }
+dl { display: grid; grid-template-columns: 120px 1fr; gap: 6px 16px; margin: 0; }
+dt { font-family: var(--mono); font-size: .72rem; text-transform: uppercase; color: var(--muted); padding-top: 3px; letter-spacing: .03em; }
+dd { margin: 0; max-width: 80ch; }
+dd.weak { color: var(--pen); }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.links a, button.chip { font: 500 .82rem var(--body); border: 1px solid var(--pen); color: var(--pen); background: var(--card); padding: 5px 10px; text-decoration: none; cursor: pointer; }
+.links a.primary { background: var(--pen); color: #fff; }
+.links span.none { font-size: .82rem; color: var(--muted); padding: 5px 0; }
+.filters { display: grid; grid-template-columns: 2fr 1fr 2fr 1fr auto; gap: 8px; align-items: end; }
+.filters label { display: grid; gap: 3px; font-family: var(--mono); font-size: .7rem; text-transform: uppercase; color: var(--muted); }
+.filters input, .filters select { font: 400 .92rem var(--body); padding: 7px 8px; border: 1px solid #c9d1d8; background: var(--card); color: var(--ink); width: 100%; }
+.filters button { font: 500 .85rem var(--body); padding: 8px 12px; border: 1px solid var(--ink); background: var(--card); cursor: pointer; }
+.split { display: grid; grid-template-columns: 1fr 280px; gap: 18px; align-items: start; }
+.tablewrap { overflow-x: auto; background: var(--card); border: 1px solid var(--grid); }
+table { border-collapse: collapse; width: 100%; font-size: .88rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { font-family: var(--mono); font-weight: 500; font-size: .7rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); background: var(--card); position: sticky; top: 0; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.row { cursor: pointer; }
+tr.row:hover td { background: #fbfbf2; }
+tr.cz td:first-child { box-shadow: inset 4px 0 0 var(--marker); }
+tr.detail td { background: #fafbfc; color: var(--muted); font-size: .84rem; }
+.cat { color: var(--muted); font-size: .8rem; }
+aside { display: grid; gap: 16px; }
+.panel { background: var(--card); border: 1px solid var(--grid); padding: 12px 14px; display: grid; gap: 8px; }
+.bar { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; font-size: .84rem; cursor: pointer; background: none; border: 0; padding: 0; text-align: left; color: var(--ink); font-family: var(--body); }
+.bar i { grid-column: 1 / -1; display: block; height: 6px; background: #c9d6ea; }
+.bar.on i, .bar.cz i { background: var(--marker); outline: 1px solid #c8b800; }
+.bar b { font-variant-numeric: tabular-nums; font-weight: 500; }
+.count { font-family: var(--mono); font-size: .8rem; color: var(--muted); }
+.note { color: var(--muted); font-size: .85rem; max-width: 80ch; }
+ol.take { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; max-width: 85ch; }
+footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; border-top: 1px solid var(--grid); padding-top: 14px; }
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+  .filters { grid-template-columns: 1fr 1fr; }
+  dl { grid-template-columns: 1fr; gap: 2px; }
+  dd { margin-bottom: 8px; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header style="display:grid;gap:14px">
+  <p class="meta">Strategické oddelenie · stav k 2. 11. 2026 · vyhlásenie 3. 12. 2026 v Bruseli</p>
+  <h1>Effie Europe 2026: finalisti pod lupou</h1>
+  <p class="lead">Pracovný dashboard na rozbor finálových prác. Česko má vo finále päť kampaní a šesť nominácií. Pri štyroch máme plné znenie prihlášky z Effie CZ 2025, pri ostatných finalistoch odkaz na vyhľadanie case-u.</p>
+  <div class="tiles" id="tiles"></div>
+</header>
+
+<nav aria-label="Sekcie">
+  <a href="#cesko">České práce</a>
+  <a href="#finalisti">Všetci finalisti</a>
+  <a href="#historia">História a laťka</a>
+  <a href="#zavery">Závery</a>
+</nav>
+
+<section id="cesko" aria-labelledby="h-cesko">
+  <h2 id="h-cesko">České práce</h2>
+  <p class="note">Šance sú náš úsudok z dostupných dát, nie predpoveď poroty. Modrou sú slabé miesta, ktoré podľa nás porota uvidí.</p>
+  <div class="cards" id="czcards"></div>
+</section>
+
+<section id="finalisti" aria-labelledby="h-fin" hidden>
+  <h2 id="h-fin">Všetci finalisti</h2>
+  <div class="filters">
+    <label for="q">Hľadať <input id="q" type="search" placeholder="značka, agentúra, názov"></label>
+    <label for="ftrack">Track <select id="ftrack"></select></label>
+    <label for="fcat">Kategória <select id="fcat"></select></label>
+    <label for="fcountry">Krajina <select id="fcountry"></select></label>
+    <button id="reset" type="button">Zrušiť filtre</button>
+  </div>
+  <div class="split">
+    <div style="display:grid;gap:8px">
+      <p class="count" id="count"></p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Práca</th><th>Klient</th><th>Hlavná agentúra</th><th>Krajina</th><th>Case</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table></div>
+      <p class="note">Klikni na riadok pre spolupracujúce agentúry. Jedna kampaň môže byť vo viacerých kategóriách, tabuľka ukazuje riadky shortlistu, nie unikátne kampane.</p>
+    </div>
+    <aside>
+      <div class="panel"><h3>Krajiny</h3><div id="countries" style="display:grid;gap:6px"></div></div>
+      <div class="panel"><h3>Agentúrne siete</h3><div id="networks" style="display:grid;gap:6px"></div><p class="note">Podľa hlavnej agentúry, kľúčové slovo v názve.</p></div>
+    </aside>
+  </div>
+</section>
+
+<section id="historia" aria-labelledby="h-hist" hidden>
+  <h2 id="h-hist">História a laťka</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Ročník</th><th>Finalisti</th><th>Kovy</th><th>Konverzia</th><th>Zlato</th><th>Grand Effie</th></tr></thead>
+    <tbody>
+      <tr><td>2023</td><td class="n">~82</td><td class="n">50</td><td class="n">~61 %</td><td>neoverené</td><td>Aldi „Kevin versus John“ (McCann Manchester)</td></tr>
+      <tr><td>2024</td><td class="n">82</td><td class="n">55</td><td class="n">67 %</td><td>neoverené</td><td>KPN „A Piece of Me“ (Dentsu Creative Amsterdam)</td></tr>
+      <tr><td>2025</td><td class="n">102</td><td class="n">63</td><td class="n">62 %</td><td class="n">13 (12,7 % finalistov)</td><td>neudelená</td></tr>
+      <tr><td>2026</td><td class="n">132</td><td colspan="4">vyhlásenie 3. 12. 2026</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Kategórie českých prác v minulých rokoch</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Kategória</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+    <tbody>
+      <tr><td>Food &amp; Beverage (dnes Beverages, Proud)</td><td>zlato Mini Cheddars</td><td>zlato Unilever „Lost the Pot“, striebro Argeta, bronz Lipton</td><td>striebro Aqua Carpatica, bronz Zlatý Bažant Radler</td></tr>
+      <tr><td>Media, Entertainment, Sports &amp; Leisure (Paralympiáda)</td><td>kategória nebola</td><td>bronz TikTok TR</td><td>bronz VTM GO</td></tr>
+      <tr><td>Positive Change: Non-profit (Paralympiáda)</td><td>kategória nebola</td><td>zlato „Have a Word“, bronz ČAP „Zpomal“ (McCann Prague), bronz Breast Cancer Ireland</td><td>zlato Greenpeace „The Dead Sea“ a 3 bronzy</td></tr>
+      <tr><td>Social Good: Non-Profit (Hele, motorka!)</td><td>5 kovov vrátane striebra „Nastenka“ (SK)</td><td>7 kovov vrátane bronzu Úsmev ako dar (SK)</td><td>3 kovy</td></tr>
+      <tr><td>Services (Cinkačka)</td><td>2 bronzy</td><td>1 bronz (BCR)</td><td>len Multi-Market: striebro Mastercard, bronz Lombard Odier, bronz XTB</td></tr>
+      <tr><td>Experiential / Brand Experience (Spořitelna)</td><td>Multi-Market striebro</td><td>striebro McDonald's Fínsko, 2 bronzy</td><td>bronz IKEA</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Česko a Slovensko v Effie Europe</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Ročník</th><th>Česko</th><th>Slovensko</th></tr></thead>
+    <tbody>
+      <tr><td>2021</td><td>Triad Prague, IKEA „Za bezpečný domov“: striebro Retail, bronz Social Good Brands</td><td>neoverené</td></tr>
+      <tr><td>2023</td><td>bez kovu</td><td>striebro „Nastenka“ (THIS IS LOCCO), bronz UNIQA (TRIAD Bratislava)</td></tr>
+      <tr><td>2024</td><td>bronz ČAP „Zpomal, ještě je brzo“ (McCann Prague)</td><td>bronz Úsmev ako dar</td></tr>
+      <tr><td>2025</td><td>2× striebro Mastercard „Room For Everyone“ (McCann Poland a Prague, multi-market)</td><td>zlato a bronz Zlatý Bažant Radler, bronz Dr.Max (THIS IS LOCCO)</td></tr>
+      <tr><td>2026</td><td>5 kampaní, 6 nominácií, plus Škoda Auto v Multi-Market Automotive (AMV BBDO UK)</td><td>8 riadkov shortlistu (Triad, THIS IS LOCCO, MUW Saatchi, JANDL)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Počty finalistov 2023 sú dopočítané z tlačovej správy. Kategórie sa medzi rokmi menili, história je orientačná.</p>
+</section>
+
+<section id="zavery" aria-labelledby="h-zav" hidden>
+  <h2 id="h-zav">Závery</h2>
+  <ol class="take">
+    <li><strong>Laťka je dôležitejšia než súperi.</strong> Proud je v kategórii sám, Spořitelna má jedného súpera. V roku 2025 dostalo kov 62 % finalistov a zlato 13 %. Realistický cieľ je bronz.</li>
+    <li><strong>Najsilnejšie dôkazy majú Proud a Cinkačka.</strong> Opakovaný nákup, noví klienti, marža a pri Cinkačke priznaný vplyv súbežnej kampane KB.</li>
+    <li><strong>Každý český case má slabé miesto v porovnaní.</strong> Letné hry proti zimným, pokles po rekordnom roku, malý absolútny podiel s veľkým prirovnaním.</li>
+    <li><strong>Jazyk v Effie Europe neprekáža.</strong> Zlato brali dánske, ukrajinské aj slovenské práce. Rozhoduje kauzalita.</li>
+    <li><strong>Laťka pre Česko je nízka.</strong> 2023 nič, 2024 bronz, 2025 dve striebra pre multi-market. Dva kovy by boli najlepší výsledok za posledné roky.</li>
+  </ol>
+  <h3>Pre našu prácu</h3>
+  <ol class="take">
+    <li>Meranie správania navrhni už v briefe. Dodatočne sa to nedá.</li>
+    <li>Základ porovnania vyber tak, aby obstál pred cudzou porotou, a priznaj ďalšie faktory.</li>
+    <li>Pri výbere kategórie pozri, koľko má finalistov a koľko kovov historicky dáva.</li>
+    <li>Názov prihlášky píš ako výsledkovú vetu.</li>
+  </ol>
+</section>
+
+<footer>
+  <p>Zdroje: <a href="https://www.mam.cz/wp-content/uploads/2026/11/Effie-Shortlist-2026.pdf">shortlist Effie Europe 2026 (PDF)</a> · <a href="https://www.effie-europe.com/2026/10/29/effie-europe-shortlist-2026/">effie-europe.com</a> · <a href="https://www.effie-europe.com/wp-content/uploads/2025/12/Effie-Europe-Winners-List-2025.pdf">víťazi 2025 (PDF)</a> · <a href="https://www.effie.cz/vysledky-effie/rocnik-2025/">Effie CZ 2025, prihlášky</a></p>
+  <p>Dáta finalistov sú prepísané zo shortlistu automaticky. Ak niečo nesedí, platí PDF.</p>
+</footer>
+
+</div>
+<script src="finalists.js"></script>
+<script>
+const EC = "https://www.effie.cz/vysledky-effie/rocnik-2025/";
+const CZ = [
+  { id: "proud", title: "Proud", sub: "Plzeňský Prazdroj · VCCP Prague", cats: ["Best of Europe: Beverages"], chance: "vysoká", hi: true,
+    vyzva: "Spotreba piva v ČR klesla za šesť rokov o 7 %. U mladých v mestách klesla penetrácia o 13 p. b. Polovica Gen Z pije pivo raz za mesiac alebo vôbec.",
+    insight: "Mladých odpudzuje horkosť a imidž „pupkatých pivárov“. Zároveň sú hrdí na české pivo a zahraničné značky odmietajú z princípu.",
+    idea: "Prvý český ľahký ležiak. Logo ambigram, priehľadná vratná tretinka, výzva „Obrať proud“. Viac ako 60 akcií pre Gen Z, 500 tisíc vzoriek. Rozpočet nad 30 mil.",
+    dokaz: "Vyskúšalo ho <mark>23,9 % mladých pri cieli 13 %</mark>. Opakovaný nákup fľaše 30 %, iné novinky 12,5 až 22 %. Marža o 16 % nad priemerom portfólia, off-trade 16 % nad cieľom pri vyššej cene. Penetrácia piva u mladých +0,8 p. b. po −4,5 p. b. rok predtým. V 2025 ho pozná 76 % cieľovky.",
+    slabe: "On-trade zaostal za cieľom. „Podiel ako všetky zahraničné pivá“ je 0,5 % hodnoty off-trade, objem v hektolitroch nie je zverejnený.",
+    pole: "V kategórii jediný finalista. Súperí len s laťkou poroty.",
+    links: [["Plné znenie prihlášky", EC + "obratili-jsme-proud-ceskeho-piva/", 1], ["Výsledky s grafmi (PDF)", "https://www.effie.cz/app/uploads/2025/11/napoje_proud_vysledkysgrafy.pdf"], ["Effie CZ Grand Prix (MediaGuru)", "https://www.mediaguru.cz/clanky/2025/12/grand-prix-effie-pro-plzensky-prazdroj-a-vccp-za-lezak-proud/"]] },
+  { id: "para", title: "Jak získat dvojnásobek diváků paralympiády", sub: "Český paralympijský výbor · VML", cats: ["Best of Europe: Media, Entertainment, Sports & Leisure", "Best of Europe: Positive Change - Non-profit"], chance: "stredná",
+    vyzva: "Olympiádu sleduje 7 z 10 Čechov, paralympiádu 3 z 10. Zimnú paralympiádu Peking 2022 videlo 781 tisíc ľudí, olympiádu 5,5 milióna.",
+    insight: "Bariérou nie sú zložité pravidlá. Ľudia nemajú dôvod pozrieť prvýkrát, a kto raz pozrie, zostane.",
+    idea: "„Stejní, ale jiní“, šport je len jeden. Spoty s Vendulou Duškovou a Patrikom Jahodom s ľahkou nadsádzkou, tramvaj. Rozpočet pod 5 mil., spoty na ČT pro bono.",
+    dokaz: "Cieľ 1,04 milióna divákov. ČT uvádza pre Paríž <mark>1,5 milióna</mark>, zhruba dvojnásobok Pekingu.",
+    slabe: "Porovnáva letné hry so zimnými. ČT dala rekordných 180 hodín vysielania, globálne publikum rástlo o 40 %. Výsledková príloha prihlášky nie je verejná.",
+    pole: "Dve kategórie po troch finalistoch. Media a Sports dáva posledné roky jeden bronz. V Non-profit proti CALM (adam&eveTBWA).",
+    links: [["Plné znenie prihlášky (Sport)", EC + "jak-ziskat-dvojnasobek-divaku-paralympiady-2/", 1], ["Prihláška (Positive Change)", EC + "jak-ziskat-dvojnasobek-divaku-paralympiady/"], ["Kampaň k Parížu (MediaGuru)", "https://www.mediaguru.cz/clanky/2024/04/cesky-paralympijsky-tym-predstavil-kampan-k-parizi/"]] },
+  { id: "moto", title: "Hele, motorka!", sub: "BESIP a Česká asociace pojišťoven · Triad Prague", cats: ["Positive Change: Social Good - Non-Profit"], chance: "stredná",
+    vyzva: "Asi 40 % nehôd so zranením motorkára spôsobí vodič, ktorý ho prehliadol. V roku 2024 zomrelo 83 motorkárov, o 12 % viac.",
+    insight: "Mozog malé objekty v premávke odfiltruje. Strašenie nepomôže, pomôže zvyk motorku nahlas pomenovať.",
+    idea: "Povedz nahlas „Hele, motorka!“. Štart cez 362 bublín v Prahe, jedna za každého mŕtveho motorkára za päť rokov. Mad Stars Crystal 2026.",
+    dokaz: "Podľa Behavio si heslo po prvej sezóne <mark>osvojila asi tretina vodičov</mark>. V roku 2025 zomrelo 60 motorkárov, o 28 % menej.",
+    slabe: "Rok 2024 bol vrchol, pokles môže byť návrat k priemeru. Január až máj 2026: 24 mŕtvych proti 10 rok predtým. Metodika Behavio nie je verejná, 90,2 mil. kontaktov je dosah. Na Effie CZ nesúťažil.",
+    pole: "Päť finalistov, kategória dáva 3 až 7 kovov ročne. V 2024 tu ČAP s McCannom brala bronz.",
+    links: [["Spustenie kampane (MediaGuru)", "https://www.mediaguru.cz/clanky/2025/06/nova-kampan-chce-snizit-vazne-nehody-motorkaru/", 1], ["Výsledky a Mad Stars (MediaGuru)", "https://www.mediaguru.cz/kampan-hele-motorka-ziskala-oceneni-crystal-na-mad-stars"]], noentry: true },
+  { id: "cink", title: "Cinkačka", sub: "Komerční banka a Mastercard · Good Game", cats: ["Best of Europe: Services"], chance: "stredná",
+    vyzva: "Herné karty KB získali za tri roky 16 000 držiteľov, Spořitelna medzitým pridala do gamingu peniaze. Cieľ: toľko kariet za šesť mesiacov so štvrtinou rozpočtu.",
+    insight: "Hráči nesledujú hry, sledujú tvorcov. Tretina kúpi, čo im obľúbený streamer odporučí.",
+    idea: "Obrátený turnaj: streameri hrajú o peniaze pre divákov. V losovaní len klienti KB, nový klient dostane 2 000 Kč. Rozpočet 5 až 10 mil.",
+    dokaz: "18 506 kariet (+18 % nad cieľ), <mark>14 400 nových klientov, 180 % cieľa</mark>. Noví klienti 78 % žiadateľov (+28 p. b.), 87 % kartu používa, výhry asi 23 Kč na kartu.",
+    slabe: "Súčasne bežala hlavná kampaň KB s rovnakým bonusom a väčším rozpočtom. Agentúra to priznáva, oddeliť vplyv bude ťažké. Bonus na úrovni konkurencie.",
+    pole: "Štyria finalisti, dvaja od McCannu. XTB s tým istým case-om brala v 2025 bronz. Services za tri roky dali len bronzy.",
+    links: [["Plné znenie prihlášky", EC + "kb-a-mastercard-jak-cinkacka-vycinkala-rekordni-prodeje/", 1], ["Prihláška (Sport a Gaming)", EC + "kb-a-mastercard-jak-cinkacka-vycinkala-rekordni-prodeje-2/"], ["Tlačová správa KB", "https://www.kb.cz/cs/o-bance/tiskove-zpravy/cinkacka-2000-kc-pro-nove-klienty-komercky"]] },
+  { id: "fmb", title: "Nejstarší banka má nejmladší board", sub: "Česká spořitelna · VML, OAK Prague", cats: ["Best of Europe: Experiential Marketing"], chance: "nižšia",
+    vyzva: "Banka stráca až 30 000 klientov ročne, báza starne. Lídrom u mladých je Air Bank, konkurencia láka na peniaze.",
+    insight: "Mladí cítia, že ich spoločnosť nepočúva. Typickému poslancovi je 49 rokov, manažérovi 50.",
+    idea: "Tieňový board šiestich ľudí pod 30. Nábor ako zážitok: AI pohovor, assessment v Kutnej Hore, spätná väzba každému. Rozpočet 5 až 10 mil.",
+    dokaz: "<mark>2 488 uchádzačov, 415 % cieľa.</mark> Index odlišnosti u 18 až 24-ročných z 98 na 115 pri cieli +10.",
+    slabe: "Zvažovanie banky len +1,5 p. b. Noví mladí klienti sa nemerali, nie je zdokumentované, čo board zmenil. Doma cena ADC za kreativitu, zlato v kategórii nie.",
+    pole: "Dvaja finalisti, súperom McDonald's Maďarsko. Kategória dala v 2025 jediný bronz.",
+    links: [["Plné znenie prihlášky", EC + "nejstarsi-banka-dostala-nejmladsi-board/", 1], ["Výsledky (PDF)", "https://www.effie.cz/app/uploads/2025/11/2025000031_nejstarsibankadostalanejmladsiboard_vysledky_0.pdf"], ["Cena ADC (MediaGuru)", "https://www.mediaguru.cz/effie-specialni-cenu-adc-ziskava-kampan-ceske-sporitelny"]] }
+];
+const F = window.FINALISTS || [];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const isCZ = r => r.country === "Czechia" || /Czech|ŠKODA AUTO/i.test(r.client);
+const short = c => c.replace(/^(Best of Europe|Multi-market|Multi-Market|Positive Change|Single-market|Single-Market): /i, "");
+const $ = id => document.getElementById(id);
+
+// tiles
+const countries = [...new Set(F.map(r => r.country))];
+$("tiles").innerHTML = [
+  [F.length, "riadkov shortlistu"], [new Set(F.map(r => r.category)).size, "kategórií"], [countries.length, "krajín"],
+  [F.filter(isCZ).length, "riadkov s českým klientom"], ["3. 12.", "vyhlásenie v Bruseli"]
+].map(([b, t]) => `<div class="tile"><b>${b}</b><span class="meta">${t}</span></div>`).join("");
+
+// czech cards
+$("czcards").innerHTML = CZ.map(c => `
+  <article class="card" id="case-${c.id}">
+    <div class="head"><h3>${esc(c.title)} <span class="cat">· ${esc(c.sub)}</span></h3><span class="tag${c.hi ? " hi" : ""}">šanca ${c.chance}</span></div>
+    <dl>
+      <dt>Kategória</dt><dd>${c.cats.map(esc).join("<br>")}</dd>
+      <dt>Výzva</dt><dd>${c.vyzva}</dd>
+      <dt>Insight</dt><dd>${c.insight}</dd>
+      <dt>Idea</dt><dd>${c.idea}</dd>
+      <dt>Dôkaz</dt><dd>${c.dokaz}</dd>
+      <dt>Slabé miesto</dt><dd class="weak">${c.slabe}</dd>
+      <dt>Pole</dt><dd>${c.pole}</dd>
+    </dl>
+    <div class="links">
+      ${c.links.map(([t, u, p]) => `<a href="${u}" target="_blank" rel="noopener"${p ? ' class="primary"' : ""}>${esc(t)}</a>`).join("")}
+      ${c.noentry ? '<span class="none">Plná prihláška nie je verejná, na Effie CZ nesúťažila.</span>' : ""}
+      ${c.cats.map(k => `<button class="chip" type="button" data-cat="${esc(k)}">Súperi: ${esc(short(k))}</button>`).join("")}
+    </div>
+  </article>`).join("");
+
+// filters
+const opts = (el, vals, all) => el.innerHTML = `<option value="">${all}</option>` + vals.map(v => `<option>${esc(v)}</option>`).join("");
+opts($("ftrack"), ["Best of Europe", "Multi-Market", "Special"], "všetky");
+opts($("fcat"), [...new Set(F.map(r => r.category))].sort(), "všetky");
+opts($("fcountry"), countries.sort(), "všetky");
+const NETS = ["McCann", "VML", "Publicis", "TBWA", "Saatchi", "Leo", "DDB", "Ogilvy", "Havas", "Grey", "BBDO", "TRIAD", "LOCCO", "Arena Media", "NORD", "dentsu", "OMD", "Wavemaker", "PS21"];
+const net = r => NETS.find(n => r.lead.toLowerCase().includes(n.toLowerCase())) || null;
+
+function render() {
+  const q = $("q").value.trim().toLowerCase(), t = $("ftrack").value, c = $("fcat").value, k = $("fcountry").value;
+  const list = F.filter(r => (!t || r.track === t) && (!c || r.category === c) && (!k || r.country === k) &&
+    (!q || [r.title, r.client, r.lead, r.contrib, r.category].join(" ").toLowerCase().includes(q)));
+  $("count").textContent = `${list.length} z ${F.length} riadkov`;
+  let html = "", last = null;
+  [...list].sort((a, b) => a.category.localeCompare(b.category)).forEach((r, i) => {
+    if (r.category !== last) {
+      const n = F.filter(x => x.category === r.category).length;
+      html += `<tr><td colspan="5" style="background:#f2f4f1"><strong>${esc(r.category)}</strong> <span class="cat">· ${n} ${n === 1 ? "finalista" : n < 5 ? "finalisti" : "finalistov"}</span></td></tr>`;
+      last = r.category;
+    }
+    const s = encodeURIComponent(`"${r.title}" ${r.client.split("/")[0]} Effie`);
+    const cz = CZ.find(x => x.cats.includes(r.category) && isCZ(r));
+    const caseLink = cz ? `<a href="#case-${cz.id}" data-go="${cz.id}">rozbor a prihláška</a>` : `<a href="https://www.google.com/search?q=${s}" target="_blank" rel="noopener">hľadať</a>`;
+    html += `<tr class="row${isCZ(r) ? " cz" : ""}" tabindex="0" data-i="${i}"><td>${esc(r.title)}</td><td>${esc(r.client)}</td><td>${esc(r.lead)}</td><td class="n">${esc(r.country)}</td><td>${caseLink}</td></tr>
+      <tr class="detail" hidden><td colspan="5">Spolupracujúce agentúry: ${esc(r.contrib || "neuvedené")} · Track: ${esc(r.track)}</td></tr>`;
+  });
+  $("rows").innerHTML = html || `<tr><td colspan="5">Nič nevyhovuje filtrom. Skús ich zrušiť.</td></tr>`;
+  const bars = (el, key, active, setter) => {
+    const cnt = {}; list.forEach(r => { const v = key(r); if (v) cnt[v] = (cnt[v] || 0) + 1; });
+    const max = Math.max(1, ...Object.values(cnt));
+    el.innerHTML = Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 14).map(([n, v]) =>
+      `<button type="button" class="bar${n === active ? " on" : ""}${n === "Czechia" ? " cz" : ""}" data-v="${esc(n)}"><span>${esc(n)}</span><b>${v}</b><i style="width:${(v / max * 100).toFixed(0)}%"></i></button>`).join("");
+    el.querySelectorAll("button").forEach(b => b.onclick = () => setter(b.dataset.v));
+  };
+  bars($("countries"), r => r.country, k, v => { $("fcountry").value = $("fcountry").value === v ? "" : v; render(); });
+  bars($("networks"), net, null, v => { $("q").value = v; render(); });
+}
+["q", "ftrack", "fcat", "fcountry"].forEach(id => $(id).addEventListener("input", render));
+$("reset").onclick = () => { ["q", "ftrack", "fcat", "fcountry"].forEach(id => $(id).value = ""); render(); };
+$("rows").addEventListener("click", e => {
+  if (e.target.closest("a")) return;
+  const tr = e.target.closest("tr.row"); if (tr) tr.nextElementSibling.hidden = !tr.nextElementSibling.hidden;
+});
+$("rows").addEventListener("keydown", e => { if (e.key === "Enter" && e.target.matches("tr.row")) e.target.click(); });
+document.addEventListener("click", e => {
+  const chip = e.target.closest("[data-cat]");
+  if (chip) { $("q").value = ""; $("ftrack").value = ""; $("fcountry").value = ""; $("fcat").value = chip.dataset.cat; location.hash = "finalisti"; render(); }
+  const go = e.target.closest("[data-go]");
+  if (go) { e.preventDefault(); location.hash = "cesko"; setTimeout(() => $("case-" + go.dataset.go).scrollIntoView(), 0); }
+});
+
+// hash routing
+const VIEWS = ["cesko", "finalisti", "historia", "zavery"];
+function route() {
+  const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "cesko";
+  VIEWS.forEach(x => $(x).hidden = x !== v);
+  document.querySelectorAll("nav a").forEach(a => a.getAttribute("href") === "#" + v ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+}
+window.addEventListener("hashchange", route);
+render(); route();
+</script>
+</body>
+</html>
